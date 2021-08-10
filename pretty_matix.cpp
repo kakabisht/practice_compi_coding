@@ -7,6 +7,7 @@ int main()
     int i, j;
     int no_rotation = 0;
     int arr[5][5];
+    int m, n;
     for (i = 0; i < 5; i++)
     {
         for (j = 0; j < 5; j++)
@@ -20,31 +21,49 @@ int main()
         for (j = 0; j < 5; j++)
         {
 
-            if ((arr[i][j] == 1) && (i > 2))
+            if (arr[i][j] == 1)
             {
-                swap(arr[i][j], arr[i - 1][j]);
-                no_rotation++;
-            }
-            if ((arr[i][j] == 1) && (j > 2))
-            {
-                swap(arr[i][j], arr[i][j - 1]);
-                no_rotation++;
-            }
-            if ((arr[i][j] == 1) && (i < 2))
-            {
-                swap(arr[i][j], arr[i + 1][j]);
-                no_rotation++;
-            }
-            if ((arr[i][j] == 1) && (j < 2))
-            {
-                swap(arr[i][j], arr[i][j + 1]);
-                no_rotation++;
-            }
-            if ((arr[i][j] == 1) && (i == 2) && (j == 2))
-            {
-                continue;
+                m = i;
+                n = j;
+                break;
             }
         }
     }
-    cout << no_rotation;
+
+    for (i = 0; i < 5; i++)
+    {
+        if (m > 2)
+        {
+            m--;
+            no_rotation++;
+        }
+        if (m < 2)
+        {
+            m++;
+            no_rotation++;
+        }
+        if (m == 2)
+        {
+            break;
+        }
+    }
+
+    for (j = 0; j < 5; j++)
+    {
+        if (n > 2)
+        {
+            n--;
+            no_rotation++;
+        }
+        if (n < 2)
+        {
+            n++;
+            no_rotation++;
+        }
+        if (n == 2)
+        {
+            break;
+        }
+    }
+    cout << no_rotation << endl;
 }
