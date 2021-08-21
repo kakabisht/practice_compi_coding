@@ -1,6 +1,29 @@
 #include <iostream>
 using namespace std;
 
+void newArr(int ar[], int num, int op[])
+{
+    for (int i = 0; i < num; i++)
+    {
+        for (int j = 0; j < num; j++)
+        {
+            if (i == j)
+            {
+                continue;
+            }
+            else
+            {
+                op[i] *= ar[j];
+            }
+        }
+    }
+    for (int i = 0; i < num; i++)
+    {
+        cout << op[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     int n;
@@ -12,22 +35,5 @@ int main()
         cin >> arr[i];
         output[i] = 1;
     }
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (i == j)
-            {
-                continue;
-            }
-            else
-            {
-                output[i] *= arr[j];
-            }
-        }
-    }
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
+    newArr(arr, n, output);
 }
