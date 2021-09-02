@@ -1,5 +1,5 @@
-fname = input("file name?")
-word = input("word?")
+fname = input("file name? ")
+word = input("word? ")
 k = 0
 
 with open(fname, 'r') as f:
