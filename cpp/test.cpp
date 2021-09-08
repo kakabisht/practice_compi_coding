@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
     long long int m, n;
-    cin >> m >> n;
-    cout << __gcd(m, n);
+    cin >> m;
+    cout << m % 10 << endl;
+    cout << m / 10 << endl;
 }
